@@ -21,7 +21,7 @@ struct ContentView: View {
                 self.contentVM.addTask()
             }){ Text("Add task")}
             Spacer()
-            List{
+            ScrollView{
                 ForEach(self.contentVM.tasks, id: \.name){task in
                     HStack{
                         Text(task.name)
@@ -29,12 +29,21 @@ struct ContentView: View {
                         Button(action: {
                             self.contentVM.deleteTask(task)
                         }){
-                            Text("Xoá")
+                            Text("Delete")
                         }
                         .padding(.all,10)
                         .background(Color.red)
                         .foregroundColor(.white)
-                    }
+                        
+                        Button(action: {
+                            self.contentVM.update(task: task)
+                        }){
+                            Text("Edit")
+                        }
+                        .padding(.all,10)
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                    }.padding()
                 }
             }
         }.padding()
@@ -42,6 +51,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ContentView()
     }

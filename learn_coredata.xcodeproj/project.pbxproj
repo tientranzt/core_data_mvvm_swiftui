@@ -17,6 +17,7 @@
 		FFD5AA0C24BAF2630020517C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5AA0B24BAF2630020517C /* CoreDataManager.swift */; };
 		FFD5AA0F24BAFE550020517C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5AA0E24BAFE550020517C /* ContentViewModel.swift */; };
 		FFD5AA1224BB0DBF0020517C /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5AA1124BB0DBF0020517C /* NSManagedObjectContext+Extension.swift */; };
+		FFD5AA1524BB5DBB0020517C /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5AA1424BB5DBB0020517C /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FFD5AA0B24BAF2630020517C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FFD5AA0E24BAFE550020517C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		FFD5AA1124BB0DBF0020517C /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
+		FFD5AA1424BB5DBB0020517C /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		FFD5A9F024BAB3930020517C /* learn_coredata */ = {
 			isa = PBXGroup;
 			children = (
+				FFD5AA1324BB5DA80020517C /* Views */,
 				FFD5AA1024BB0D400020517C /* Extension */,
 				FFD5AA0D24BAFE3F0020517C /* Model */,
 				FFD5AA0A24BAF2450020517C /* Manager */,
@@ -109,6 +112,14 @@
 				FFD5AA1124BB0DBF0020517C /* NSManagedObjectContext+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FFD5AA1324BB5DA80020517C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5AA1424BB5DBB0020517C /* SwiftUIView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 			files = (
 				FFD5AA0C24BAF2630020517C /* CoreDataManager.swift in Sources */,
 				FFD5A9F724BAB3930020517C /* learn_coredata.xcdatamodeld in Sources */,
+				FFD5AA1524BB5DBB0020517C /* SwiftUIView.swift in Sources */,
 				FFD5AA0F24BAFE550020517C /* ContentViewModel.swift in Sources */,
 				FFD5A9F224BAB3930020517C /* AppDelegate.swift in Sources */,
 				FFD5A9F924BAB3930020517C /* ContentView.swift in Sources */,

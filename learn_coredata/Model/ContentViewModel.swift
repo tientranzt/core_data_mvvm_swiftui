@@ -14,21 +14,31 @@ class  ContentViewModel: ObservableObject {
     
     
     init() {
+        print("init")
         fetchAllTask()
     }
     
     func addTask() {
+        print("add task")
         CoreDataManager.shareMoc.addtask(name: name)
         fetchAllTask()
         self.name = ""
     }
     
     func fetchAllTask()  {
+        print("fetch all")
         self.tasks =  CoreDataManager.shareMoc.getAllTasks().map(TaskModel.init)
     }
     
     func deleteTask(_ taskRemove : TaskModel) {
+        print("delete")
         CoreDataManager.shareMoc.removeTask(name: taskRemove.name)
+        fetchAllTask()
+    }
+    
+    func update(task : TaskModel) {
+        print("update")
+        CoreDataManager.shareMoc.updateTask(name: task.name)
         fetchAllTask()
     }
 }

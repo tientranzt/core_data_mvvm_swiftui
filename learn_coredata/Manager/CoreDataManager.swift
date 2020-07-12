@@ -42,6 +42,28 @@ class CoreDataManager {
         }
     }
     
+    func updateTask(name: String) {
+//       var tasks = [Task]()
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Task")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name as CVarArg)
+        fetchRequest.fetchLimit = 1
+    
+        
+        do {
+      
+            
+            
+            let test = try self.moc.fetch(fetchRequest)
+            let taskUpdate = test[0] as! NSManagedObject
+            taskUpdate.setValue("edit here", forKey: "name")
+      
+
+        } catch let err as NSError {
+            print(err)
+        }
+    }
+    
     func addtask(name : String) {
         let task = Task(context: self.moc)
         task.name = name
@@ -68,19 +90,7 @@ class CoreDataManager {
         return orders
         
     }
-    
-    //    func fetchAllTask() -> [Task] {
-    //        var tasks =  [Task]()
-    //        let taskRequest :  NSFetchRequest<Task> = Task.fetchRequest()
-    //
-    //        do {
-    //            tasks = try self.moc.fetch(taskRequest)
-    //        } catch let err as NSError {
-    //            print(err)
-    //        }
-    //        return tasks
-    //
-    //    }
+
     
 }
 
