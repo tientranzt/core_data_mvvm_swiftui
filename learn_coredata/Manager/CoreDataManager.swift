@@ -8,90 +8,77 @@
 
 import SwiftUI
 import CoreData
-
-class CoreDataManager {
-    
-    static var shareMoc = CoreDataManager(moc: NSManagedObjectContext.currentContext)
+class CoreDataManager{
+    static var share =  CoreDataManager(moc: NSManagedObjectContext.currentContext)
     
     var moc : NSManagedObjectContext
-    private init(moc: NSManagedObjectContext){
+    init(moc: NSManagedObjectContext) {
         self.moc = moc
     }
     
     func fetchTaskByName(name : String) -> Task? {
         var task = [Task]()
-        let taskRequest : NSFetchRequest<Task> = Task.fetchRequest()
+        let taskRequest :  NSFetchRequest<Task> =  Task.fetchRequest()
         taskRequest.predicate = NSPredicate(format: "name == %@", name)
         
         do {
             task = try self.moc.fetch(taskRequest)
-        } catch let err  as NSError {
-            print(err)
+        } catch  {
+            print(error)
         }
-        return task.first
+        return task.first!
     }
     
-    func removeTask(name: String) {
-        do {
-            if let order = fetchTaskByName(name: name){
-                self.moc.delete(order)
-                try self.moc.save()
-            }
-        } catch let err as NSError {
-            print(err)
-        }
-    }
-    
-    func updateTask(name: String) {
-//       var tasks = [Task]()
-        
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Task")
-        fetchRequest.predicate = NSPredicate(format: "name == %@", name as CVarArg)
-        fetchRequest.fetchLimit = 1
-    
-        
-        do {
-      
-            
-            
-            let test = try self.moc.fetch(fetchRequest)
-            let taskUpdate = test[0] as! NSManagedObject
-            taskUpdate.setValue("edit here", forKey: "name")
-      
-
-        } catch let err as NSError {
-            print(err)
-        }
-    }
-    
-    func addtask(name : String) {
-        let task = Task(context: self.moc)
+    func  addTask(name: String) {
+        let task =  Task(context: self.moc)
         task.name = name
-        
         do {
             try self.moc.save()
-        } catch {
+        } catch  {
             print(error)
         }
     }
     
-    func getAllTasks() -> [Task] {
+    func updateTask(name: String, valueEdit : String)  {
+        do {
+            if let task = fetchTaskByName(name: name){
+                task.setValue(valueEdit , forKey: "name")
+                do {
+                    try  self.moc.save()
+                } catch  {
+                    print(error)
+                }
+            }
+        }
+//        catch{
+//            print(error)
+//        }
+    }
+    
+    
+    
+    func deleteTask(name: String) {
+        do {
+            if let task = fetchTaskByName(name: name){
+                self.moc.delete(task)
+                try self.moc.save()
+            }
+        } catch  {
+            print(error)
+        }
+    }
+    
+    func fetchAllTask() -> [Task] {
+        var task = [Task]()
         
-        var orders = [Task]()
-        
-        let orderRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        let taskRequest : NSFetchRequest<Task> = Task.fetchRequest()
         
         do {
-            orders = try self.moc.fetch(orderRequest)
-        } catch let error as NSError {
-            print(error)
+            task = try self.moc.fetch(taskRequest)
+        } catch let err as NSError {
+            print(err)
         }
-        
-        return orders
-        
+        return task
     }
-
     
 }
-
-

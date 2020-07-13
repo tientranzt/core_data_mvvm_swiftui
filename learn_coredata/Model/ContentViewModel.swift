@@ -6,49 +6,46 @@
 //  Copyright © 2020 tientran. All rights reserved.
 //
 
-import Foundation
-
-class  ContentViewModel: ObservableObject {
-    @Published var tasks = [TaskModel]()
+import SwiftUI
+import CoreData
+class ContentViewModel: ObservableObject {
+    
+    @Published var tasks =  [TaskModel]()
     var name : String = ""
     
-    
     init() {
-        print("init")
         fetchAllTask()
+    }
+    
+    func fetchAllTask() {
+        self.tasks = CoreDataManager.share.fetchAllTask().map(TaskModel.init)
     }
     
     func addTask() {
-        print("add task")
-        CoreDataManager.shareMoc.addtask(name: name)
+        CoreDataManager.share.addTask(name: name)
         fetchAllTask()
         self.name = ""
     }
-    
-    func fetchAllTask()  {
-        print("fetch all")
-        self.tasks =  CoreDataManager.shareMoc.getAllTasks().map(TaskModel.init)
+    func update(name: String, value : String)  {
+        CoreDataManager.share.updateTask(name: name, valueEdit: value)
+        fetchAllTask()
     }
-    
-    func deleteTask(_ taskRemove : TaskModel) {
-        print("delete")
-        CoreDataManager.shareMoc.removeTask(name: taskRemove.name)
+    func deleteTask(name : String) {
+        CoreDataManager.share.deleteTask(name: name)
         fetchAllTask()
     }
     
-    func update(task : TaskModel) {
-        print("update")
-        CoreDataManager.shareMoc.updateTask(name: task.name)
-        fetchAllTask()
-    }
 }
 
 class TaskModel {
-    var name = ""
+    var name: String = ""
     init(task : Task) {
         self.name = task.name!
     }
+    
 }
+
+
 
 
 

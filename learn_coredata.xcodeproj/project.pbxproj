@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFAD56F624BC9A8500B3C883 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAD56F524BC9A8500B3C883 /* NSManagedObjectContext+Extension.swift */; };
 		FFD5A9F224BAB3930020517C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5A9F124BAB3930020517C /* AppDelegate.swift */; };
 		FFD5A9F424BAB3930020517C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5A9F324BAB3930020517C /* SceneDelegate.swift */; };
 		FFD5A9F724BAB3930020517C /* learn_coredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFD5A9F524BAB3930020517C /* learn_coredata.xcdatamodeld */; };
@@ -16,11 +17,10 @@
 		FFD5AA0124BAB3950020517C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD5A9FF24BAB3950020517C /* LaunchScreen.storyboard */; };
 		FFD5AA0C24BAF2630020517C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5AA0B24BAF2630020517C /* CoreDataManager.swift */; };
 		FFD5AA0F24BAFE550020517C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5AA0E24BAFE550020517C /* ContentViewModel.swift */; };
-		FFD5AA1224BB0DBF0020517C /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5AA1124BB0DBF0020517C /* NSManagedObjectContext+Extension.swift */; };
-		FFD5AA1524BB5DBB0020517C /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5AA1424BB5DBB0020517C /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FFAD56F524BC9A8500B3C883 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		FFD5A9EE24BAB3930020517C /* learn_coredata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learn_coredata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD5A9F124BAB3930020517C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFD5A9F324BAB3930020517C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,8 +32,6 @@
 		FFD5AA0224BAB3950020517C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFD5AA0B24BAF2630020517C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FFD5AA0E24BAFE550020517C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		FFD5AA1124BB0DBF0020517C /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
-		FFD5AA1424BB5DBB0020517C /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,6 @@
 				FFD5AA0A24BAF2450020517C /* Manager */,
 				FFD5A9F124BAB3930020517C /* AppDelegate.swift */,
 				FFD5A9F324BAB3930020517C /* SceneDelegate.swift */,
-				FFD5A9F824BAB3930020517C /* ContentView.swift */,
 				FFD5A9FA24BAB3950020517C /* Assets.xcassets */,
 				FFD5A9FF24BAB3950020517C /* LaunchScreen.storyboard */,
 				FFD5AA0224BAB3950020517C /* Info.plist */,
@@ -109,7 +106,7 @@
 		FFD5AA1024BB0D400020517C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FFD5AA1124BB0DBF0020517C /* NSManagedObjectContext+Extension.swift */,
+				FFAD56F524BC9A8500B3C883 /* NSManagedObjectContext+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -117,7 +114,7 @@
 		FFD5AA1324BB5DA80020517C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FFD5AA1424BB5DBB0020517C /* SwiftUIView.swift */,
+				FFD5A9F824BAB3930020517C /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,11 +192,10 @@
 			files = (
 				FFD5AA0C24BAF2630020517C /* CoreDataManager.swift in Sources */,
 				FFD5A9F724BAB3930020517C /* learn_coredata.xcdatamodeld in Sources */,
-				FFD5AA1524BB5DBB0020517C /* SwiftUIView.swift in Sources */,
 				FFD5AA0F24BAFE550020517C /* ContentViewModel.swift in Sources */,
 				FFD5A9F224BAB3930020517C /* AppDelegate.swift in Sources */,
 				FFD5A9F924BAB3930020517C /* ContentView.swift in Sources */,
-				FFD5AA1224BB0DBF0020517C /* NSManagedObjectContext+Extension.swift in Sources */,
+				FFAD56F624BC9A8500B3C883 /* NSManagedObjectContext+Extension.swift in Sources */,
 				FFD5A9F424BAB3930020517C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
