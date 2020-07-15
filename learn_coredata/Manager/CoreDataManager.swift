@@ -44,7 +44,7 @@ class CoreDataManager{
             if let task = fetchTaskByName(name: name){
                 task.setValue(valueEdit , forKey: "name")
                 do {
-                    try  self.moc.save()
+                    try self.moc.save()
                 } catch  {
                     print(error)
                 }

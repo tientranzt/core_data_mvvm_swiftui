@@ -9,10 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var contentVM : ContentViewModel
-    init() {
-        self.contentVM = ContentViewModel()
-    }
+    @EnvironmentObject var contentVM : ContentViewModel
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -40,8 +38,8 @@ struct ContentView: View {
 }
 
 struct EditTask : View {
-    @ObservedObject var contentVM = ContentViewModel()
-     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var contentVM : ContentViewModel
+    @Environment(\.presentationMode) var presentationMode
     @State var editValue = ""
     var task :  TaskModel
     var body : some View{
